@@ -10,11 +10,7 @@ export class userModel {
 	async findById(id) {
 		return new Promise((resolve, reject) => {
 			const user = DB.find((u) => u.id === id)
-			if (user) {
-				resolve(user)
-			} else {
-				reject(`user with ${id} is not found`)
-			}
+			resolve(user)
 		})
 	}
 
