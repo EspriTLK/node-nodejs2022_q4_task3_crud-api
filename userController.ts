@@ -1,8 +1,7 @@
-import { userModel as User } from './userModel.js'
-import { getPostData } from './utils.js';
-import { ERROR_NOT_FOUND, ERROR_NOT_REQUIRED_FIELDS, ERROR_ON_SERVER } from './errors.js';
+import { userModel as User } from './userModel'
+import { ERROR_NOT_FOUND, ERROR_NOT_REQUIRED_FIELDS, ERROR_ON_SERVER } from './errors';
 import { IncomingMessage, ServerResponse } from 'node:http'
-import { checkUsersFields } from './utils.js';
+import { getPostData, checkUsersFields } from './utils';
 
 interface IUser {
 	id: string;

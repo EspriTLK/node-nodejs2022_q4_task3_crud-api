@@ -1,8 +1,8 @@
 import http from 'node:http'
 import * as dotenv from 'dotenv'
 import { validate as uuidValidate } from 'uuid'
-import { getUsers, getUser, createUser, updateUser, deleteUser } from './userController.js';
-import { ERROR_NOT_VALID_URL, ERROR_NOT_VALID_ID } from './errors.js'
+import { getUsers, getUser, createUser, updateUser, deleteUser } from './userController';
+import { ERROR_NOT_VALID_URL, ERROR_NOT_VALID_ID } from './errors'
 dotenv.config()
 
 const PORT = process.env.PORT || 5555;
