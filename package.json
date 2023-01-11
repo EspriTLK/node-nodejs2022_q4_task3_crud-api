@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "start:dev": "nodemon server.js"
+    "start:dev": "tsc && nodemon --watch './' --ext 'ts,json' --exec 'npx ts-node-esm server.ts'"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/EspriTLK/node-nodejs2022_q4_task3_crud-api#readme",
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "@types/uuid": "^9.0.0",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1"
   },
   "dependencies": {
     "dotenv": "^16.0.3",

@@ -20,10 +20,11 @@ const server = http.createServer(async (req, res) => {
 				res
 					.writeHead(404, {"Content-Type": 'application/json'})
 					.end()
+				break
 
 		}
 		//regEXP [0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[4][0-9a-fA-F]{3}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
-	} else if(req.url.match(/\/api\/users\/[0-9a-fA-F]+/) && req.url.split('/').length === 4) {
+	} else if(req.url !== undefined && req.url.match(/\/api\/users\/[0-9a-fA-F]+/) && req.url.split('/').length === 4) {
 		const id = req.url.split('/')[3]
 		if(uuidValidate(id)){
 			switch (req.method) {
@@ -36,10 +37,11 @@ const server = http.createServer(async (req, res) => {
 				case 'DELETE':
 					deleteUser(req, res, id)
 					break
-				// default:
-				// 	res
-				// 		.writeHead(404, {"Content-Type": 'application/json'})
-				// 		.end()
+				default:
+					res
+						.writeHead(404, {"Content-Type": 'application/json'})
+						.end()
+					break
 			}
 		} else {
 			res.writeHead(ERROR_NOT_VALID_ID.status, ERROR_NOT_VALID_ID.content )
