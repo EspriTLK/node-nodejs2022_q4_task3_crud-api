@@ -60,13 +60,14 @@ export  const createUser = async (req: IncomingMessage, res: ServerResponse) => 
 
 		const { name, age, hobbies } = JSON.parse(getBody)
 
-		const isExistName = 'name' in body
-		const isExistAge = 'age' in body
-		const isExistHobbies = 'hobbies' in body
-		const isHobbieString = !(hobbies.find((elm: string | number | object) => typeof(elm) !== 'string'))
+		// const isExistName = 'name' in body
+		// const isExistAge = 'age' in body
+		// const isExistHobbies = 'hobbies' in body
+		// const isHobbieString = !(hobbies.find((elm: string | number | object) => typeof(elm) !== 'string'))
 		
-		if ((isExistName && typeof(name) === 'string') && (isExistAge && typeof(age) === 'number') && (isExistHobbies && Array.isArray(hobbies) && isHobbieString)){
-		
+		// if ((isExistName && typeof(name) === 'string') && (isExistAge && typeof(age) === 'number') && (isExistHobbies && Array.isArray(hobbies) && isHobbieString)){
+		if(checkUsersFields(body)){
+
 			const user = {
 				name,
 				age,

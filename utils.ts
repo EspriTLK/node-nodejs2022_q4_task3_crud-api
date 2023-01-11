@@ -29,10 +29,12 @@ export const checkUsersFields = (obj: IUser) => {
 	const isExistName = 'name' in obj
 	const isExistAge = 'age' in obj
 	const isExistHobbies = 'hobbies' in obj
-	const isHobbieString = !(obj.hobbies.find((elm: string | number | object) => typeof(elm) !== 'string'))
 	try {
-		if((isExistName && typeof obj.name === 'string') && (isExistAge && typeof obj.age === 'number') && isExistHobbies && isHobbieString) {
-			return true
+		if((isExistName && typeof obj.name === 'string') && (isExistAge && typeof obj.age === 'number') && isExistHobbies) {
+			const isHobbieString = !(obj.hobbies.find((elm: string | number | object) => typeof(elm) !== 'string'))
+			if(isHobbieString) {
+				return true
+			}
 		} else {
 			return false
 		}
