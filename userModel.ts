@@ -14,7 +14,7 @@ let DB: INewUser[] = []
 
 
 export class userModel {
-	async findAllUsers() {
+	async findAllUsers(): Promise<INewUser[]> {
 		return new Promise((resolve, reject) => resolve(DB))
 	}
 
@@ -25,7 +25,7 @@ export class userModel {
 		})
 	}
 
-	async addUser(user: IUser) {
+	async addUser(user: IUser): Promise<INewUser> {
 		return new Promise((resolve, reject) => {
 
 			const newUser: INewUser = {
@@ -37,7 +37,7 @@ export class userModel {
 		})
 	}
 
-	async updateUser(id: string, user: IUser) {
+	async updateUser(id: string, user: IUser): Promise<INewUser> {
 		return new Promise((resolve, reject) => {
 			const index = DB.findIndex((u) => u.id === id)
 			DB[index] = {id, ...user}
