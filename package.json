@@ -1,0 +1,31 @@
+{
+  "name": "nodejs2022_q4_task3_crud-api",
+  "version": "1.0.0",
+  "description": "SIMPLE CRUD API for rsschool node 2022q4 task3",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:prod": "tsc && node ./dist/server.js",
+    "start:dev": "nodemon --watch './' --ext 'ts,json' --exec 'npx ts-node server.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EspriTLK/node-nodejs2022_q4_task3_crud-api.git"
+  },
+  "author": "Kazakevich. L",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EspriTLK/node-nodejs2022_q4_task3_crud-api/issues"
+  },
+  "homepage": "https://github.com/EspriTLK/node-nodejs2022_q4_task3_crud-api#readme",
+  "devDependencies": {
+    "@types/uuid": "^9.0.0",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "uuid": "^9.0.0"
+  }
+}
